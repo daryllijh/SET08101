@@ -1,0 +1,113 @@
+<!-- reference: https://dev.to/sulaimonolaniran/building-a-simple-quiz-with-html-css-and-javascript-4elp -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Meme Online Quiz</title>
+		<link href="index.css" rel="stylesheet" type="text/css" media="screen">
+		<script type="text/javascript" src="index.js"></script>
+	</head>
+
+	<body>
+		<!-- cover -->
+		<div id="cover">
+			<h1>Meme Online Quiz</h1>
+			<img class="meme-img" src="img/meme_king.jpg" alt="meme king">
+			<p>Consider yourself a meme expert?</p>
+			<p>Try to guess when they were created!</p>
+			<button id="start" onclick="startQuiz()">I'm Ready!</button>
+		</div>
+
+		<div class="game-quiz-container" id="quiz" style="display: none">
+
+			<!-- indicators -->
+			<div class="game-details-container">
+				<h1>Score : <span id="player-score"></span> / 10</h1>
+				<h1>Question : <span id="question-number"></span> / 10</h1>
+			</div>
+
+			<!-- questions -->
+			<div id="display-question"></div>
+
+			<div class="game-options-container">
+				<p>When was this meme created?</p>
+
+				<!-- warning -->
+				<div class="modal-container" id="option-modal">
+
+					<div class="modal-content-container">
+						<h1>Please pick an option</h1>
+
+						<div class="modal-button-container">
+							<button onclick="closeOptionModal()">Okay</button>
+						</div>
+
+					</div>
+
+			    </div>
+
+				<!-- options -->
+				<span>
+					<input type="radio" id="option-one" name="option" value="optionA">
+					<label for="option-one" class="option" id="option-one-label"></label>
+				</span>
+
+				<span>
+					<input type="radio" id="option-two" name="option" value="optionB">
+					<label for="option-two" class="option" id="option-two-label"></label>
+				</span>
+
+				<span>
+					<input type="radio" id="option-three" name="option" value="optionC">
+					<label for="option-three" class="option" id="option-three-label"></label>
+				</span>
+
+				<span>
+					<input type="radio" id="option-four" name="option" value="optionD">
+					<label for="option-four" class="option" id="option-four-label"></label>
+				</span>
+
+			</div>
+
+			<!-- check answer -->
+			<div class="modal-button-container">
+				<button onclick="handleNextQuestion()">Confirm</button>
+			</div>
+
+			<!-- question's background information -->
+			<div class="game-options-container" style="display: none">
+				<p id="question-description" style="font-family: monotype corsiva"></p>
+			</div>
+
+			<!-- next question -->
+			<div class="modal-button-container" style="display: none">
+				<button onclick="nextQuestion()">Continue</button>
+			</div>
+
+		</div>
+
+		<!-- scoreboard -->
+		<div class="modal-container" id="score-modal">
+
+			<div class="modal-content-container">
+				<h1 style="color: lightpink;">Your result</h1>
+
+				<div class="grade-details">
+					<p>Attempts : 10</p>
+					<p>Right Answers : <span id="right-answers"></span></p>
+					<p>Grade : <span id="grade-percentage"></span>%</p>
+					<p><span id="remarks"></span></p>
+				</div>
+
+				<!-- restart quiz -->
+				<div class="modal-button-container">
+					<button onclick="closeScoreModal()">Try Again!</button>
+				</div>
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
