@@ -83,6 +83,9 @@ body{
 
 #display-question img{
     max-height: 200px;
+    -webkit-animation: fadeIn 0.4s;
+    	-moz-animation: fadeIn 0.4s;
+    animation: fadeIn 0.4s;
 }
 
 .game-options-container{
@@ -92,6 +95,9 @@ body{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
+    -webkit-animation: fadeIn 0.4s;
+    	-moz-animation: fadeIn 0.4s;
+    animation: fadeIn 0.4s;
 }
 
 .game-options-container span{
